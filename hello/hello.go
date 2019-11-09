@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("Le Thi Ha Lan\n")
+	fmt.Printf("Le Thi Ha Lan 76\n")
 	fmt.Printf("Nguyen Trong Nhan\n")
 }
