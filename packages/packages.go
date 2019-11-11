@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"time"
 )
 
 func main() {
+	fmt.Print("RANDOM NUMBER\n")
 	// For example, `rand.Intn` returns a random `int` n,
 	// `0 <= n < 100`.
 	fmt.Print(rand.Intn(100), ",")
@@ -49,4 +51,28 @@ func main() {
 	r3 := rand.New(s3)
 	fmt.Print(r3.Intn(100), ",")
 	fmt.Print(r3.Intn(100))
+	fmt.Println()
+
+	s4 := rand.NewSource(time.Now().UnixNano())
+	r4 := rand.New(s4)
+	fmt.Println("My favorite number is: ", r4.Intn(10))
+	fmt.Println()
+
+	//Export names
+	//In Go, a name is exported if it begins with a capital letter.
+	//For example, Pizza is an exported name, as is Pi, which is exported from the math package.
+	//pizza and pi do not start with a capital letter, so they are not exported.
+
+	fmt.Print("EXPORT NAMES\n")
+	fmt.Printf("Now you have %g problems\n", math.Sqrt(7))
+	fmt.Println("Pi number is ", math.Pi)
+	fmt.Println()
+
+	//FUNCTION
+	fmt.Print("FUNCTIONS\n")
+	fmt.Println(add(1, 1))
+}
+
+func add(x int, y int) int {
+	return x + y
 }
