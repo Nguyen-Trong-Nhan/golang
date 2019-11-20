@@ -7,6 +7,9 @@ import (
 	"time"
 )
 
+// var c, python, java bool
+var i, j int = 1, 2
+
 func main() {
 	fmt.Print("RANDOM NUMBER\n")
 	// For example, `rand.Intn` returns a random `int` n,
@@ -71,8 +74,43 @@ func main() {
 	//FUNCTION
 	fmt.Print("FUNCTIONS\n")
 	fmt.Println(add(1, 1))
+	fmt.Println(substract(1, 1))
+	a := "hello"
+	b := "world"
+	//a, b := swap("hello", "world")
+	fmt.Println(swap(a, b))
+	fmt.Println(split(10))
+
+	//VARIBLES
+	fmt.Print("VARIBLES\n")
+	// var i int
+	// fmt.Println(i, c, python, java)
+	var c, python, java = true, false, "no!"
+	fmt.Println(i, j, c, python, java)
+
 }
 
 func add(x int, y int) int {
 	return x + y
 }
+
+// /When two or more consecutive named function parameters share a type, you can omit the type from all but the last.
+func substract(x, y int) int {
+	return x - y
+}
+
+//A function can return any number of results.
+//The swap function returns two strings.
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+//A return statement without arguments returns the named return values. This is known as a "naked" return.
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+//The var statement declares a list of variables; as in function argument lists, the type is last.
+//A var statement can be at package or function level. We see both in this example.
